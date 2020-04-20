@@ -10,28 +10,36 @@
   <link rel='stylesheet' type='text/css' href='Styles/style.css'>
 </head>
 <body id="bodyBackground">
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="index.html">Home</a>
-  <a href="quiz.html">Quiz</a>
-  <a href="sizes.html">Phone Sizes</a>
-  <a href="more_info.html">More Information</a>
+
+<nav>
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="index.html">Home</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="sizes.html">Phone Sizes</a>
+    <a href="more_info.html">More Information</a>
+  </div>
 </div>
+  <div class='teal header'>
+    <h1 class="" style='text-align:inherit'>Quiz</h1>
+    <div id='navButton' class="container" href='javascript:void(0);' style='text-align:right;position:right' onclick="myFunction(this);openNav()">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+    <div class='navbar' style='text-align:inherit' id='myNavBar'>
+    </div>
+  </div>
+</nav>
 
-<div class='navbar' id='myNavBar'>
-  <a href="index.html">Home</a>
-  <a href="quiz.html">Quiz</a>
-  <a href="sizes.html">Phone Sizes</a>
-  <a href="more_info.html">More Information</a>
-  <a href='javascript:void(0);' class="icon" onclick="openNav();">&#9776;</a>
-</div>
-
-
-<h2 class="hide center arial medium" id='testtext'>Based on your selections, the algorithm has decided that the <span id="phone-text"></span></h2>
+<h2 style="margin-top:0;" class="hide center arial medium" id='testtext'>Based on your selections, the algorithm has decided that the <span id="phone-text"></span></h2>
 
 <div class="center" id='total-quiz'>
 <div id="premiumDiv">
-<h3 class="medium arial">Are you looking for a premium phone?</h3>
+<h3 style="margin-top:0;" class="medium arial">Are you looking for a premium phone?</h3>
 <input class="radio" onclick="show('phonesizebutton')" type="radio" name="premium" value="premium" id="premium">
 <label id="premiumlabel" for="premium" class="n_aBlack arial">Yes</label>
 <br>
@@ -44,7 +52,7 @@
 </div>
 
 <div id='phonesize' class='hide'>
-<h3 class="medium arial">What size phone do you prefer? <a target="_blank" style="text-decoration:none; font-size:2vw; background-color: Transparent; border: none; cursor:pointer;" href = 'sizes.html'>&#9432;</a></h3>
+<h3 style="margin-top:0;" class="medium arial">What size phone do you prefer? <a target="_blank" style="text-decoration:none; font-size:2vw; background-color: Transparent; border: none; cursor:pointer;" href = 'sizes.html'>&#9432;</a></h3>
 <input   onclick="show('phonestoragebutton')" class="radio" type="radio" name="size" value="small" id="small">
 <label for="small" id="smalllabel" class="arial n_aFont"><span class="n_a">Small</span></label>
 <br>
@@ -61,7 +69,7 @@
 </div>
 
 <div id='phonestorage' class='hide'>
-  <h3 class="medium arial">How much storage would you prefer? </h3>
+  <h3 style="margin-top:0;" class="medium arial">How much storage would you prefer? </h3>
   <input  onclick="show('phonecamerabutton')" class="radio" type="radio" name="storage" value="64" id="64gb">
   <label for="64gb" id="64gblabel" class="arial n_aFont"><span class="n_a">64GB</span></label>
   <br>
@@ -81,7 +89,7 @@
 <button class="hide submitbutton button2" id='phonecamerabutton' onclick="RadioValue('storage');RadioCheck('cameras');show('phonecamera');hide('phonestorage');disable('64gb');disable('128gb');disable('256gb');disable('512gb')">NEXT</button>
 </div>
 <div id='phonecamera' class='hide'>
-  <h3 class="medium arial">how important are the camera(s) to you? </h3>
+  <h3 style="margin-top:0;" class="medium arial">how important are the camera(s) to you? </h3>
   <input  onclick="show('faceortouchbutton')" class="radio" type="radio" name="cameras" value="cam1" id="cam1">
   <label for="cam1" id="cam1label" class="arial n_aFont"><span class="n_a">1 (not much)</span></label>
   <br>
@@ -97,7 +105,7 @@
 </div>
 
 <div id='faceortouch' class='hide'>
-  <h3 class="medium arial">Would you rather have FaceID or TouchID? </h3>
+  <h3 style="margin-top:0;" class="medium arial">Would you rather have FaceID or TouchID? </h3>
   <input  onclick="show('submit')" class="radio" type="radio" name="face/touch" value="face" id="face">
   <label for="face" id="facelabel" class="arial n_aFont"><span class="n_a">FaceID</span></label>
   <br>
