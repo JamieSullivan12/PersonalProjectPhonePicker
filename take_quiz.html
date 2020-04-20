@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+  <script src="JavaScript/javascript.js"></script>
+  <script src="JavaScript/quizscript.js"></script>
+
+  <link rel='stylesheet' type='text/css' href='Styles/style.css'>
+</head>
+<body id="bodyBackground">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="sizes.html">Phone Sizes</a>
+  <a href="more_info.html">More Information</a>
+</div>
+
+<div class='navbar' id='myNavBar'>
+  <a href="index.html">Home</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="sizes.html">Phone Sizes</a>
+  <a href="more_info.html">More Information</a>
+  <a href='javascript:void(0);' class="icon" onclick="openNav();">&#9776;</a>
+</div>
+
+
+<h2 class="hide center arial medium" id='testtext'>Based on your selections, the algorithm has decided that the <span id="phone-text"></span></h2>
+
+<div class="center" id='total-quiz'>
+<div id="premiumDiv">
+<h3 class="medium arial">Are you looking for a premium phone?</h3>
+<input class="radio" onclick="show('phonesizebutton')" type="radio" name="premium" value="premium" id="premium">
+<label id="premiumlabel" for="premium" class="n_aBlack arial">Yes</label>
+<br>
+
+<input   class="radio" type="radio" name="premium" onclick="show('phonesizebutton')" value="basic" id="basic">
+<label id="basiclabel" for="basic" class="n_aBlack arial">No</label>
+<br>
+
+<button class="hide button2 submitbutton" id='phonesizebutton' onclick="RadioValue('premium');RadioCheck('size');show('phonesize');hide('premiumDiv')">NEXT</button>
+</div>
+
+<div id='phonesize' class='hide'>
+<h3 class="medium arial">What size phone do you prefer? <a target="_blank" style="text-decoration:none; font-size:2vw; background-color: Transparent; border: none; cursor:pointer;" href = 'sizes.html'>&#9432;</a></h3>
+<input   onclick="show('phonestoragebutton')" class="radio" type="radio" name="size" value="small" id="small">
+<label for="small" id="smalllabel" class="arial n_aFont"><span class="n_a">Small</span></label>
+<br>
+
+<input   onclick="show('phonestoragebutton')" class="radio" type="radio" name="size" value="medium" id="medium">
+<label for="medium" id="mediumlabel" class="arial n_aFont"><span class="n_a">Medium</span></label>
+<br>
+
+<input   onclick="show('phonestoragebutton')" class="radio" type="radio" name="size" value="large" id="large">
+<label for="large" id="largelabel" class="arial n_aFont"><span class="n_a">Large</span></label>
+<br>
+
+<button class="hide submitbutton button2" id='phonestoragebutton' onclick="RadioValue('size');RadioCheck('storage');show('phonestorage');hide('phonesize');disable('small');disable('medium');disable('large')">NEXT</button>
+</div>
+
+<div id='phonestorage' class='hide'>
+  <h3 class="medium arial">How much storage would you prefer? </h3>
+  <input  onclick="show('phonecamerabutton')" class="radio" type="radio" name="storage" value="64" id="64gb">
+  <label for="64gb" id="64gblabel" class="arial n_aFont"><span class="n_a">64GB</span></label>
+  <br>
+
+  <input  onclick="show('phonecamerabutton')" class="radio" type="radio" name="storage" value="128" id="128gb">
+  <label for="128gb" id="128gblabel" class="arial n_aFont"><span class="n_a">128GB</span></label>
+  <br>
+
+  <input  onclick="show('phonecamerabutton')" class="radio" type="radio" name="storage" value="256" id="256gb">
+  <label for="256gb" id="256gblabel" class="arial n_aFont"><span class="n_a">256GB</span></label>
+  <br>
+
+  <input  onclick="show('phonecamerabutton')" class="radio" type="radio" name="storage" value="512" id="512gb">
+  <label for="512gb" id="512gblabel" class="arial n_aFont"><span class="n_a">512GB</span></label>
+  <br>
+
+<button class="hide submitbutton button2" id='phonecamerabutton' onclick="RadioValue('storage');RadioCheck('cameras');show('phonecamera');hide('phonestorage');disable('64gb');disable('128gb');disable('256gb');disable('512gb')">NEXT</button>
+</div>
+<div id='phonecamera' class='hide'>
+  <h3 class="medium arial">how important are the camera(s) to you? </h3>
+  <input  onclick="show('faceortouchbutton')" class="radio" type="radio" name="cameras" value="cam1" id="cam1">
+  <label for="cam1" id="cam1label" class="arial n_aFont"><span class="n_a">1 (not much)</span></label>
+  <br>
+
+  <input  onclick="show('faceortouchbutton')" class="radio" type="radio" name="cameras" value="cam2" id="cam2">
+  <label for="cam2" id="cam2label" class="arial n_aFont"><span class="n_a">2</span></label>
+  <br>
+
+  <input  onclick="show('faceortouchbutton')" class="radio" type="radio" name="cameras" value="cam3" id="cam3">
+  <label for="cam3" id="cam3label" class="arial n_aFont"><span class="n_a">3 (very)</span></label>
+  <br>
+  <button class="hide submitbutton button2" id='faceortouchbutton' onclick="RadioValue('cameras');RadioCheck('face/touch');show('faceortouch');hide('phonecamera');disable('cam1');disable('cam2');disable('cam3')">NEXT</button>
+</div>
+
+<div id='faceortouch' class='hide'>
+  <h3 class="medium arial">Would you rather have FaceID or TouchID? </h3>
+  <input  onclick="show('submit')" class="radio" type="radio" name="face/touch" value="face" id="face">
+  <label for="face" id="facelabel" class="arial n_aFont"><span class="n_a">FaceID</span></label>
+  <br>
+
+  <input  onclick="show('submit')" class="radio" type="radio" name="face/touch" value="touch" id="touch">
+  <label for="touch" id="touchlabel" class="arial n_aFont"><span class="n_a">TouchID</span></label>
+  <br>
+
+<button type="submit" class="hide submitbutton button2" id='submit' onclick="RadioValue('face/touch');hide('submit');hide('total-quiz');show('testtext');disable('face');disable('touch');phoneFinished();show('quiz-complete-page');">Submit</button>
+</div>
+</div>
+<div style="padding-left:15%;padding-right:15%" class="hide" id="quiz-complete-page">
+  <img class="mobile" alt='placeholder1' src='Images/iphoneXS.jpeg' id="qc-img">
+  <h2 class="arial medium"><b>Specifications</b></h2>
+  <h3 class="arial">CLICK <a  target='_blank' href='more_info.html'>HERE</a> FOR MORE INFORMATION REGARDING THE CATEGORIES BELOW</h3>
+  <p style="text-align:left" class="arial specifications" id='specs'><p>
+
+</div>
+</body>
